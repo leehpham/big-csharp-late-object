@@ -6,7 +6,12 @@ namespace CheckPalindrome
     {
         static void Main(string[] args)
         {
-            Console.WriteLine("Fuck you World!");
+            Console.WriteLine(IsPalindrome("aba aba"));
+        }
+
+        public static bool IsPalindrome(string text)
+        {
+            return IsPalindrome(text, 0, text.Length - 1);
         }
 
         /// <summary>
