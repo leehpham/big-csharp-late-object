@@ -1,18 +1,35 @@
 ﻿using System;
 using System.Collections.Generic;
 
-namespace P13_12
+namespace P13_13
 {
     class Program
     {
         static void Main(string[] args)
         {
-            List<string> result = GenerateSubstrings("hello");
-            foreach(var str in result)
+            List<string> result = GenerateSubsets("temp");
+            foreach (var str in result)
             {
                 Console.WriteLine(str);
             }
+            Console.WriteLine($"Count: {result.Count}");
             Console.WriteLine("*****");
+        }
+
+        public static List<string> GenerateSubsets(string input)
+        {
+            List<string> result = new List<string>();
+
+            for (int i = 0; i < input.Length; i++)
+            {
+                var subStrs = GenerateSubstrings(input.Substring(i + 1));
+                foreach (var str in subStrs)
+                {
+                    result.Add(input[i] + str);
+                }
+            }
+            result.Add("");
+            return result;
         }
 
         public static List<string> GenerateSubstrings(string input)
