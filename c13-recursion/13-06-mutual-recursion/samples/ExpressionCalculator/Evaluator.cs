@@ -43,7 +43,8 @@ namespace ExpressionCalculator
         /// <returns></returns>
         public int GetFactorValue()
         {
-
+            int value;
+            
         }
     }
 }
