@@ -20,7 +20,7 @@ namespace ExpressionCalculator
             input = anInput;
             start = 0;
             end = 0;
-            NextToken();
+            NextToken(); // Find the first token
         }
 
         /// <summary>

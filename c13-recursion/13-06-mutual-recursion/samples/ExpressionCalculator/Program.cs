@@ -2,12 +2,15 @@
 
 namespace ExpressionCalculator
 {
-    class Program
+    public class Program
     {
-        static void Main(string[] args)
+        public static void Main(string[] args)
         {
-            var tokenizer = new ExpressionTokenizer("123+45");
-            Console.WriteLine(tokenizer.NextToken());
+            Console.Write("Enter an expression: ");
+            string input = Console.ReadLine();
+            Evaluator e = new Evaluator(input);
+            int value = e.GetExpressionValue();
+            Console.WriteLine($"{input}={value}");
         }
     }
 }
